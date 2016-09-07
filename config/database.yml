@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: mainyu_development
+  pool: 16
+  username: studio
+  password: 123456
