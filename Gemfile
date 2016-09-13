@@ -33,9 +33,11 @@ gem 'puma', group: 'production'
 gem 'draper'
 gem 'cloudinary'
 gem 'impressionist'
+gem 'geocoder'
 gem 'searchkick'
 
 group :development, :test do
+  gem 'better_errors'
   gem 'byebug'
 end
 

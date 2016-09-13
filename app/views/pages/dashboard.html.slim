@@ -1,12 +1,23 @@
 .row
   .col-xs-12.col-sm-6.col-md-4
     div.white-wrapper
+      div.wrapper-map style="margin-bottom: 15px"
+        #map style="width: 100%; height: 300px"
       p
         | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
       p
         | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
   .col-xs-12.col-sm-6.col-md-8
-    div.white-wrapper.row
+    - if @region_name.present?
+      div class="alert alert-success alert-dismissible" role="alert" style="margin: 0px -15px 5px -15px"
+        button type="button" class="close" data-dismiss="alert" aria-label="Close"
+          span aria-hidden="true" &times;
+        strong Are you from bandung?
+        = " Visit"
+        = link_to ' here ', dashboard_pages_path(location: @region_name)
+        | to see all cool place in bandung
+
+    div.white-wrapper.row style="margin-bottom: 15px"
       .col-sm-12.col-md-4.no-pad-right style="min-height: 239px;"
         = image_tag "", { style: "background: url('#{asset_path("placeholder_user.jpg")}') center;", class: 'boat-thumb' }
       .col-sm-12.col-md-8.no-pad-left
@@ -16,7 +27,7 @@
           | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
         p
           | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage.
-    div.white-wrapper.row
+    div.white-wrapper.row style="margin-bottom: 15px"
       .col-sm-12.col-md-4.no-pad-right style="min-height: 239px;"
         = image_tag "", { style: "background: url('#{asset_path("placeholder_user.jpg")}') center;", class: 'boat-thumb' }
       .col-sm-12.col-md-8.no-pad-left
@@ -27,7 +38,7 @@
         p
           | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage.
 
-    div.white-wrapper.row
+    div.white-wrapper.row style="margin-bottom: 15px"
       .col-sm-12.col-md-4.no-pad-right style="min-height: 239px;"
         = image_tag "", { style: "background: url('#{asset_path("placeholder_user.jpg")}') center;", class: 'boat-thumb' }
       .col-sm-12.col-md-8.no-pad-left
@@ -37,4 +48,33 @@
           | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
         p
           | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage.
+
+javascript:
+  var setlatlngMap = function (type, value, mapElement) {
+    $.get('https://maps.googleapis.com/maps/api/geocode/json?'+type+'='+value+'&key=AIzaSyCqmZgXEYcpsjpjEuwhRwtc1Mci-hTDjc8',
+      function(resp) {
+        if (resp.results[0]) {
+          window. b = (resp.results[0].geometry.location)
+          mapElement.setCenter(resp.results[0].geometry.location)
+          mapElement.setZoom(11)
+        }
+      }
+    ).fail(function(err) {
+      console.log(err);
+    });
+  };
+
+  var map;
+  var initMap = function() {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: -0.7892749999999999, lng: 113.921327},
+      zoom: 3
+    });
+  }
+  initMap();
+
+  if (location.pathname != '/') {
+    var address = location.pathname.substring(1, location.pathname.length)
+    setlatlngMap('address', address, map)
+  };
 
