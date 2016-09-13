@@ -1,0 +1,12 @@
+// custom loader color
+$nprogress-color: #FFF;
+
+@import 'nprogress';
+@import 'nprogress-bootstrap';
+
+@import "bootstrap-sprockets";
+@import "bootswatch/paper/variables";
+@import "bootstrap";
+@import "bootswatch/paper/bootswatch";
+
+.pagination{margin-top:0;}

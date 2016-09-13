@@ -10,6 +10,31 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
- *= require_self
+ *= require imports
+ *= require npprogress-custom
+ *= require pages
  */
+
+body {
+  background-color: #eee;
+}
+
+.white-wrapper {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 15px;
+}
+
+@media (min-width: 1290px) {
+  .container {
+    width: 1290px;
+  }
+}
+
+.no-pad-left {
+  padding-left: 0px;
+}
+
+.no-pad-right {
+  padding-left: 0px;
+}
