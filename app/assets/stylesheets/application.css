@@ -13,6 +13,7 @@
  *= require imports
  *= require npprogress-custom
  *= require pages
+ *= require animsition.min
  */
 
 body {
