@@ -20,7 +20,12 @@
                   = f.check_box :remember_me
                   = "Remember me"
 
-          .text-right
+          div.btn-social-wrapper
+            = link_to omniauth_authorize_path('user', 'facebook'), class: "btn btn-social-icon btn-facebook"
+              span.fa.fa-facebook
+            = link_to omniauth_authorize_path('user', 'google_oauth2'), class: "btn btn-social-icon btn-google"
+              span.fa.fa-google
+          .pull-right
             = f.submit "Log in", class: "btn btn-primary btn-lg"
 
     .panel.panel-default
