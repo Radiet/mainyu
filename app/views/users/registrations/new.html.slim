@@ -1,0 +1,45 @@
+.row
+  .col-md-offset-3.col-md-6
+    .panel.panel-default
+      .panel-body
+        h4.text-center Sign Up
+        hr
+        = form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "form-horizontal" }) do |f|
+          = devise_error_messages!
+
+          / # .form-group
+          / #   = f.label "Nama depan", class: "col-sm-2 control-label"
+          / #   .col-sm-10
+          / #     = f.text_field :first_name, autofocus: true, class: "form-control", placeholder: "Nama depan"
+
+          / # .form-group
+          / #   = f.label "Nama belakang", class: "col-sm-2 control-label"
+          / #   .col-sm-10
+          / #     = f.text_field :last_name, class: "form-control", placeholder: "Nama belakang"
+
+          .form-group
+            = f.label "Email", class: "col-sm-2 control-label"
+            .col-sm-10
+              = f.email_field :email, class: "form-control", placeholder: "Alamat Email"
+
+          .form-group
+            = f.label :password, class: "col-sm-2 control-label"
+            .col-sm-10
+              = f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password"
+              - if @minimum_password_length
+                .help-block 6 karakter minimum
+              = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Ketik Ulang Password"
+
+          div.btn-social-wrapper
+            = link_to "javascript:void(0)", class: "btn btn-social-icon btn-facebook"
+              span.fa.fa-facebook
+            = link_to "javascript:void(0)", class: "btn btn-social-icon btn-twitter"
+              span.fa.fa-twitter
+
+          .pull-right
+            = f.submit "Sign up", class: "btn btn-primary btn-lg"
+
+    .panel.panel-default
+      .panel-body
+        ul.list-unstyled.text-center
+          = render "users/shared/links"

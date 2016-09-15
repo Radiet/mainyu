@@ -7,21 +7,27 @@ nav.navbar.navbar-default
         span.icon-bar
         span.icon-bar
         span.icon-bar
-      = link_to "Test", root_path, { class: "navbar-brand" }
+      = link_to "Test", root_path, { class: "navbar-brand animsition-link" }
     /! Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       ul.nav.navbar-nav.navbar-right
-        li.dropdown
-          a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
-            | Dropdown
-            span.caret
-          ul.dropdown-menu
-            li
-              a href="#"  Action
-            li
-              a href="#"  Another action
-            li
-              a href="#"  Something else here
-            li.divider role="separator"
-            li
-              a href="#"  Separated link
+        - if user_signed_in?
+          li.dropdown
+            a.dropdown-toggle aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" href="#" role="button"
+              | Dropdown
+              span.caret
+            ul.dropdown-menu
+              li
+                a href="#"  Action
+              li
+                a href="#"  Another action
+              li
+                a href="#"  Something else here
+              li.divider role="separator"
+              li
+                = link_to 'Log out', destroy_user_session_path, { method: :delete }
+        - else
+          li
+            = link_to "Sign in", new_user_session_path, { class: 'animsition-link' }
+          li
+            = link_to "Sign up", new_user_registration_path, { class: 'animsition-link' }

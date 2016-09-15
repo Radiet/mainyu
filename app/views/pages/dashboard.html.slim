@@ -1,4 +1,4 @@
-.row.animsition
+.row style="margin-right: 0px"
   .col-xs-12.col-sm-6.col-md-4
     div.white-wrapper
       div.wrapper-map style="margin-bottom: 15px"
@@ -16,45 +16,19 @@
         = " Visit"
         = link_to ' here ', dashboard_pages_path(location: @user_city.parameterize), { class: 'animsition-link' }
         | to see all cool place in bandung
-
-    div.white-wrapper.row style="margin-bottom: 15px"
-      .col-sm-12.col-md-4.no-pad-right style="min-height: 239px;"
-        = image_tag "", { style: "background: url('#{asset_path("placeholder_user.jpg")}') center;", class: 'boat-thumb' }
-      .col-sm-12.col-md-8.no-pad-left
-        .name
-          a href="#" Lorem Ipsumes
-        p
-          | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
-        p
-          | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage.
-    div.white-wrapper.row style="margin-bottom: 15px"
-      .col-sm-12.col-md-4.no-pad-right style="min-height: 239px;"
-        = image_tag "", { style: "background: url('#{asset_path("placeholder_user.jpg")}') center;", class: 'boat-thumb' }
-      .col-sm-12.col-md-8.no-pad-left
-        .name
-          a href="#" Lorem Ipsumes
-        p
-          | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
-        p
-          | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage.
-
-    div.white-wrapper.row style="margin-bottom: 15px"
-      .col-sm-12.col-md-4.no-pad-right style="min-height: 239px;"
-        = image_tag "", { style: "background: url('#{asset_path("placeholder_user.jpg")}') center;", class: 'boat-thumb' }
-      .col-sm-12.col-md-8.no-pad-left
-        .name
-          a href="#" Lorem Ipsumes
-        p
-          | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
-        p
-          | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage.
+    - 3.times do
+      div.white-wrapper.row style="margin-bottom: 15px"
+        .col-sm-12.col-md-4.no-pad-right style="min-height: 239px;"
+          = image_tag "", { style: "background: url('#{asset_path("placeholder_user.jpg")}') center;", class: 'boat-thumb' }
+        .col-sm-12.col-md-8.no-pad-left
+          .name
+            a href="#" Lorem Ipsumes
+          p
+            | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
+          p
+            | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that cont
 
 javascript:
-  $('.animsition').animsition({
-    inClass: 'rotate-in-sm',
-    outClass: 'rotate-out-sm'
-  });
-
   setTimeout(function(){
     $('.alert').show();
   }, 3000)

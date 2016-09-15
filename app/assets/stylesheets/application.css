@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require imports
+ *= require bootstrap-social
  *= require npprogress-custom
  *= require pages
  *= require animsition.min
@@ -38,4 +39,13 @@ body {
 
 .no-pad-right {
   padding-right: 0px;
+}
+
+.btn-social-wrapper {
+  margin-top: 7px;
+  display: inline-block;
+}
+
+#error_explanation h2 {
+  font-size: 24px !important;
 }

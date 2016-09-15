@@ -18,3 +18,15 @@
 //= require nprogress-ajax
 //= require bootstrap-sprockets
 //= require animsition.min
+
+var animsitionTriger;
+
+animsitionTriger = function () {
+  $('.animsition').animsition({
+    inClass: 'fade-in-left',
+    outClass: 'fade-out-right'
+  });
+}
+
+$(document).ready(animsitionTriger);
+$(document).on("page:load", animsitionTriger);

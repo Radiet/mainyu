@@ -35,6 +35,8 @@ gem 'cloudinary'
 gem 'impressionist'
 gem 'geocoder'
 gem 'searchkick'
+gem 'font-awesome-sass'
+gem "letter_opener", :group => :development
 
 group :development, :test do
   gem 'better_errors'

@@ -1,0 +1,29 @@
+.row
+  .col-md-offset-3.col-md-6
+    .panel.panel-default
+      .panel-body
+        h4.text-center Log in
+        hr
+        = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "form-horizontal" }) do |f|
+
+          .form-group
+            = f.label "Email", class: "col-sm-2 control-label"
+            .col-sm-10
+              = f.email_field :email, autofocus: true, class: "form-control"
+
+          .form-group
+            = f.label "Password", class: "col-sm-2 control-label"
+            .col-sm-10
+              = f.password_field :password, autocomplete: "off", class: "form-control"
+              .checkbox
+                label
+                  = f.check_box :remember_me
+                  = "Remember me"
+
+          .text-right
+            = f.submit "Log in", class: "btn btn-primary btn-lg"
+
+    .panel.panel-default
+      .panel-body
+        ul.list-unstyled.text-center
+          = render "users/shared/links"
