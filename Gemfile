@@ -38,6 +38,11 @@ gem 'searchkick'
 gem 'font-awesome-sass'
 gem "letter_opener", :group => :development
 
+# Omniauth
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem "omniauth-google-oauth2"
+
 group :development, :test do
   gem 'better_errors'
   gem 'byebug'

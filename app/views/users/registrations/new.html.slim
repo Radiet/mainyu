@@ -31,7 +31,7 @@
               = f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Ketik Ulang Password"
 
           div.btn-social-wrapper
-            = link_to "javascript:void(0)", class: "btn btn-social-icon btn-facebook"
+            = link_to omniauth_authorize_path('user', 'facebook'), class: "btn btn-social-icon btn-facebook"
               span.fa.fa-facebook
             = link_to "javascript:void(0)", class: "btn btn-social-icon btn-twitter"
               span.fa.fa-twitter
