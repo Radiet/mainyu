@@ -1,0 +1,13 @@
+= simple_form_for(@place) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :lat, { as: :hidden }
+    = f.input :lng, { as: :hidden }
+    = f.input :location
+    = f.input :entry_price
+    = f.input :description
+
+  .form-actions
+    = f.button :submit

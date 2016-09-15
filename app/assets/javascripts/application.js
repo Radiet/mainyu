@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.geocomplete.min
 //= require nprogress
 //= require nprogress-turbolinks
 //= require nprogress-ajax

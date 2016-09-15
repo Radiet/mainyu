@@ -1,0 +1,27 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @place.name
+p
+  strong Lat:
+  = @place.lat
+p
+  strong Lng:
+  = @place.lng
+p
+  strong Location:
+  = @place.location
+p
+  strong Description:
+  = @place.description
+p
+  strong Rating:
+  = @place.rating
+p
+  strong Entry price:
+  = @place.entry_price
+
+= link_to 'Edit', edit_place_path(@place)
+'|
+= link_to 'Back', places_path
