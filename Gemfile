@@ -43,6 +43,9 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem "omniauth-google-oauth2"
 
+# Tagging
+gem 'acts-as-taggable-on', '~> 4.0'
+
 group :development, :test do
   gem 'better_errors'
   gem 'byebug'

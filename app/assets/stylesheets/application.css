@@ -14,7 +14,10 @@
  *= require bootstrap-social
  *= require npprogress-custom
  *= require pages
+ *= require places
  *= require animsition.min
+ *= require select2.min
+ *= require select2-bootstrap.min
  */
 
 body {

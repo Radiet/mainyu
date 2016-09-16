@@ -24,10 +24,10 @@ table
         td = place.description
         td = place.rating
         td = place.entry_price
-        td = link_to 'Show', place
-        td = link_to 'Edit', edit_place_path(place)
+        td = link_to 'Show', place, { class: 'animsition-link' }
+        td = link_to 'Edit', edit_place_path(place), { class: 'animsition-link' }
         td = link_to 'Destroy', place, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
-
-= link_to 'New Place', new_place_path
+hr
+= link_to 'New Place', new_place_path, { class: 'animsition-link' }

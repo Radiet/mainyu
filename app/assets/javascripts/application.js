@@ -18,6 +18,7 @@
 //= require nprogress-turbolinks
 //= require nprogress-ajax
 //= require bootstrap-sprockets
+//= require select2.min
 //= require animsition.min
 
 var animsitionTriger;

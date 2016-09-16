@@ -1,13 +1,37 @@
-= simple_form_for(@place) do |f|
-  = f.error_notification
+.row
+  .col-md-6
+    = simple_form_for(@place) do |f|
+      = f.error_notification
 
-  .form-inputs
-    = f.input :name
-    = f.input :lat, { as: :hidden }
-    = f.input :lng, { as: :hidden }
-    = f.input :location
-    = f.input :entry_price
-    = f.input :description
+      .form-inputs.full-inputs
+        = f.input :name, { label: false, placeholder: 'Name of place' }
+        = f.input :location, { input_html: { data: { geo: 'formatted_address' } }, label: false, placeholder: 'Specific location' }
+        = f.input :lat, { as: :hidden, input_html: { data: { geo: 'lat' } } }
+        = f.input :lng, { as: :hidden, input_html: { data: { geo: 'lng' } } }
+        #place_map style="width: 100%; height: 300px"
+        small You can drag the marker to more accurate
+        = f.input :entry_price, { label: false, placeholder: 'Entry price' }
+        = f.input :tag_list, { as: :select, collection: Tag.pluck(:name), label: false, input_html: { multiple: true }  }
+        = f.input :description, { label: false, placeholder: 'Write some description' }
 
-  .form-actions
-    = f.button :submit
+      .form-actions
+        = f.button :submit
+
+javascript:
+  $('#place_tag_list').select2({
+    placeholder: "Give a tag",
+    theme: "bootstrap",
+  });
+
+  $('#place_location').geocomplete({
+    details: "form",
+    detailsAttribute: "data-geo",
+    map: "#place_map",
+    mapOptions: {
+      zoom: (#{@place.lat} === -0.7892749999999999 ? 3 : 13)
+    },
+    location: [#{@place.lat}, #{@place.lng}],
+    markerOptions: {
+      draggable: true
+    }
+  });

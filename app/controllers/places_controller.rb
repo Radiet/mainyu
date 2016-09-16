@@ -14,7 +14,7 @@ class PlacesController < ApplicationController
 
   # GET /places/new
   def new
-    @place = Place.new
+    @place = Place.new(lat: -0.7892749999999999, lng: 113.921327)
   end
 
   # GET /places/1/edit
@@ -69,6 +69,6 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:name, :lat, :lng, :location, :description, :rating, :entry_price)
+      params.require(:place).permit(:name, :lat, :lng, :location, :description, :rating, :entry_price, tag_list: [])
     end
 end
