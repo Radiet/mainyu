@@ -15,9 +15,12 @@
  *= require npprogress-custom
  *= require pages
  *= require places
+ *= require place_photo
  *= require animsition.min
  *= require select2.min
  *= require select2-bootstrap.min
+ *= require justifiedGallery.min
+ *= require dropzone/basic
  */
 
 body {

@@ -1,5 +1,5 @@
 class PlacesController < ApplicationController
-  before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :set_place, only: [:show, :update, :destroy]
 
   # GET /places
   # GET /places.json
@@ -19,6 +19,7 @@ class PlacesController < ApplicationController
 
   # GET /places/1/edit
   def edit
+    @place = Place.includes(:photos).find(params[:id])
   end
 
   # POST /places
@@ -28,7 +29,7 @@ class PlacesController < ApplicationController
 
     respond_to do |format|
       if @place.save
-        format.html { redirect_to @place, notice: 'Place was successfully created.' }
+        format.html { redirect_to edit_place_url(@place), notice: 'Place was successfully created.' }
         format.json { render :show, status: :created, location: @place }
       else
         format.html { render :new }

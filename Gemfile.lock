@@ -101,6 +101,8 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       request_store (~> 1.0)
+    dropzonejs-rails (0.7.2)
+      rails (> 3.1)
     elasticsearch (2.0.0)
       elasticsearch-api (= 2.0.0)
       elasticsearch-transport (= 2.0.0)
@@ -154,6 +156,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    method_source (0.8.2)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
@@ -190,7 +193,13 @@ GEM
     orm_adapter (0.5.0)
     pg (0.18.4)
     pkg-config (1.1.7)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
     puma (3.6.0)
+    quiet_assets (1.1.0)
+      railties (>= 3.1, < 5.0)
     rack (1.6.4)
     rack-protection (1.5.3)
       rack
@@ -282,6 +291,7 @@ GEM
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (~> 3.0)
+    slop (3.6.0)
     spring (1.7.2)
     sprockets (3.7.0)
       concurrent-ruby (~> 1.0)
@@ -318,6 +328,7 @@ PLATFORMS
 DEPENDENCIES
   acts-as-taggable-on (~> 4.0)
   better_errors
+  binding_of_caller
   bootstrap-kaminari-views
   bootstrap-sass
   bootstrap-sass-extras
@@ -330,6 +341,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   draper
+  dropzonejs-rails
   exception_notification
   font-awesome-sass
   friendly_id (~> 5.1.0)
@@ -345,7 +357,9 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-google-oauth2
   pg (~> 0.15)
+  pry
   puma
+  quiet_assets
   rails (= 4.2.6)
   redis-namespace
   redis-rails

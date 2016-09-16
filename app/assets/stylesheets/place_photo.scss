@@ -1,0 +1,32 @@
+#new_place_photo {
+  width: 100%;
+  background: white;
+  min-height: 300px;
+}
+
+.dz-message {
+  text-align: center;
+  padding-top: 125px;
+  font-size: 20px;
+  text-decoration: underline;
+  color: #444444;
+}
+
+.photo-album {
+  padding-left: 0px;
+  list-style: none;
+  li {
+    float: left;
+    img {
+      padding: 3px 0px;
+      margin: 0px !important;
+    }
+  }
+}
+
+.decorated-hr {
+  margin-top: 0px;
+  margin-bottom: 2px;
+  border: 0;
+  border-top: 2px solid rgb(68, 68, 73);
+}

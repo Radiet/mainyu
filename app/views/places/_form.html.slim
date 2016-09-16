@@ -17,10 +17,29 @@
       .form-actions
         = f.button :submit
 
+  .col-md-6
+    - if @place.id
+      = simple_form_for([@place, @place.photos.new], { html: { class: 'dropzone' }}) do |f|
+        .fallback
+          = f.input :image, { as: :file }
+      br
+      h4 Albums
+      hr.decorated-hr
+      ul.photo-album
+        - @place.photos.each do |photos|
+          li = image_tag photos.image, { width: '100px' }
+
 javascript:
   $('#place_tag_list').select2({
     placeholder: "Give a tag",
     theme: "bootstrap",
+    margins: 3
+  });
+
+  $('.photo-album').justifiedGallery({
+    selector: 'ul, li',
+    margins: 3,
+    rowHeight: 70
   });
 
   $('#place_location').geocomplete({

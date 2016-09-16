@@ -1,8 +1,7 @@
-h1 Editing place
+.pull-right
+  = link_to 'Show', @place, { class: 'animsition-link btn btn-primary' }
+  = link_to 'Back', places_path, { class: 'animsition-link btn btn-default' }
+h2 Editing place
 
 == render 'form'
-hr
-= link_to 'Show', @place, { class: 'animsition-link' }
-'|
-= link_to 'Back', places_path, { class: 'animsition-link' }
 

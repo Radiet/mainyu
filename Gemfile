@@ -12,8 +12,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
-gem 'carrierwave'
-gem 'carrierwave_backgrounder'
 gem 'kaminari'
 gem 'bootswatch-rails'
 gem 'bootstrap-sass'
@@ -46,9 +44,17 @@ gem "omniauth-google-oauth2"
 # Tagging
 gem 'acts-as-taggable-on', '~> 4.0'
 
+# Image uploading
+gem 'dropzonejs-rails'
+gem 'carrierwave'
+gem 'carrierwave_backgrounder'
+
 group :development, :test do
   gem 'better_errors'
   gem 'byebug'
+  gem 'binding_of_caller'
+  gem 'pry'
+  gem 'quiet_assets'
 end
 
 group :development do

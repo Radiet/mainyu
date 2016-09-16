@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :places
   devise_for :users,
     controllers: {
       sessions:      'users/sessions',
@@ -10,5 +9,10 @@ Rails.application.routes.draw do
     }
 
   root 'pages#dashboard'
+  resources :places do
+    resources :place_photos, only: [:create] do
+    end
+  end
+
   get '/:location', to: 'pages#dashboard', as: :dashboard_pages
 end

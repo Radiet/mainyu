@@ -15,10 +15,13 @@
 //= require turbolinks
 //= require jquery.geocomplete.min
 //= require nprogress
+//= require dropzone
+//= require place_photo
 //= require nprogress-turbolinks
 //= require nprogress-ajax
 //= require bootstrap-sprockets
 //= require select2.min
+//= require jquery.justifiedGallery.min
 //= require animsition.min
 
 var animsitionTriger;
