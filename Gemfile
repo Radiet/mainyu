@@ -48,6 +48,7 @@ gem 'acts-as-taggable-on', '~> 4.0'
 gem 'dropzonejs-rails'
 gem 'carrierwave'
 gem 'carrierwave_backgrounder'
+gem 'cloudinary'
 
 group :development, :test do
   gem 'better_errors'
