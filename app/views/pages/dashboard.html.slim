@@ -27,12 +27,14 @@
           - place.tag_list.each do |tag|
             span.btn.btn-primary.btn-sm = tag
           - if place.description.present?
-            = place.description
+            div
+              = place.description
           - else
-            p
-              | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
-            p
-              | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that cont
+            div
+              p
+                | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that control the initial thumbnails that is written in the HTML webpage. Those thumbnails are automatically loaded by the browser, and if they are inappropriate, they may slow down the loading phase.
+              p
+                | Justified Gallery has been built to load only the right thumbnails that is needed, without loading too big thumbnails, and without loading too small thumbnails. But is you that cont
 
 javascript:
   setTimeout(function(){
