@@ -19,9 +19,9 @@
 
     - @places.each do |place|
       div.white-wrapper.row style="margin-bottom: 15px"
-        .col-sm-12.col-md-4.no-pad-right style="min-height: 239px;"
+        .col-sm-12.col-md-5.no-pad-right style="min-height: 239px;"
           div style="background: url('#{asset_path(place.cover_photo)}') center;" class='boat-thumb'
-        .col-sm-12.col-md-8.no-pad-left
+        .col-sm-12.col-md-7.no-pad-left
           .name
             = link_to place.name, place
           - place.tag_list.each do |tag|
